@@ -1,12 +1,24 @@
 import React from "react";
 import Header from "./components/Header";
-
-function handleClick(event) {
-    console.log(event);
-}
+import Home from "./components/Home";
+import Produtos from "./components/Produtos";
 
 const App = () => {
-    return <React.Fragment></React.Fragment>;
+    const { pathname } = window.location;
+    if (pathname === "/produtos") {
+        return (
+            <React.Fragment>
+                <Header />
+                <Produtos />
+            </React.Fragment>
+        );
+    }
+    return (
+        <React.Fragment>
+            <Header />
+            <Home />
+        </React.Fragment>
+    );
 };
 
 export default App;

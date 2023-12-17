@@ -2,9 +2,9 @@ import React from "react";
 
 const MenuItem = ({ texto, ...props }) => {
     return (
-        <li style={{ margin: "10px", textDecoration: "underline" }} {...props}>
+        <a style={{ margin: "10px", textDecoration: "underline" }} {...props}>
             {texto}
-        </li>
+        </a>
     );
 };
 
@@ -17,8 +17,8 @@ const Menu = () => {
                     justifyContent: "space-between",
                     listStyle: "none",
                 }}>
-                <MenuItem texto='Home' id='home' />
-                <MenuItem texto='Produtos' id='produtos' />
+                <MenuItem href='/' texto='Home' />
+                <MenuItem href='/produtos' texto='Produtos' />
             </ul>
         </div>
     );
