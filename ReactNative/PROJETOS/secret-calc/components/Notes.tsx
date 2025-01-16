@@ -1,4 +1,5 @@
 import { FlatList, StyleSheet, Text, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export function Notes() {
     const notes = [
@@ -49,22 +50,20 @@ export function Notes() {
         },
     ];
     return (
-        <View>
-            <View>
-                <FlatList
-                    data={notes}
-                    renderItem={({ item }) => (
-                        <View style={styles.noteBox}>
-                            <Text style={styles.noteTitle}>{item.title}</Text>
-                            <Text>{item.note}</Text>
-                            <Text>
-                                ------------------------------------------------------------------------------------------------------
-                            </Text>
-                        </View>
-                    )}
-                />
-            </View>
-        </View>
+        <SafeAreaView>
+            <FlatList
+                data={notes}
+                renderItem={({ item }) => (
+                    <SafeAreaView style={styles.noteBox}>
+                        <Text style={styles.noteTitle}>{item.title}</Text>
+                        <Text>{item.note}</Text>
+                        <Text>
+                            ------------------------------------------------------------------------------------------------------
+                        </Text>
+                    </SafeAreaView>
+                )}
+            />
+        </SafeAreaView>
     );
 }
 
